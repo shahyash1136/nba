@@ -1,0 +1,112 @@
+@import '../_mixin.scss';
+@import '../_variables.scss';
+
+.header {
+    @extend %flexbox;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    border-bottom: 1px solid rgba($white, .1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 0px 15px;
+
+    &__left {
+        .logo {
+            width: 35px;
+            margin-top: 50px;
+            height: 80px;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    &__right {
+        @extend %flexbox;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+    }
+
+    .menu {
+        @extend %flexbox;
+        justify-content: flex-end;
+        align-items: center;
+        height: 100%;
+
+        ul {
+            @extend %flexbox;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100%;
+
+            li {
+                @extend %flexbox;
+                justify-content: center;
+                align-items: center;
+                height: 100%;
+                text-transform: uppercase;
+                font-size: 14px;
+                font-family: $medium_font-family_secondary;
+                font-weight: $medium_font-weight;
+                position: relative;
+                &.active {
+                    a {
+                        color: $white;
+                        border-bottom: 1px solid $white;
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-right: 15px;
+                }
+
+                a {
+                    @extend %flexbox;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100%;
+                    color: rgba($white, .2);
+                    text-decoration: none;
+
+                    &:hover {
+                        color: $white;
+                        border-bottom: 1px solid $white;
+                    }
+                }
+
+                input {
+                    background-color: $transparent;
+                    border: none;
+                    border: 1px solid rgba($white, .2);
+                    color: $white;
+                    font-family: $medium_font-family_secondary;
+                    font-weight: $medium_font-weight;
+                    height: 25px;
+                    @include border-radius(5px);
+                    padding: 5px;
+                    padding-right: 25px;
+                }
+
+                .icon{
+                    &.search{
+                        width: 25px;
+                        height: 25px;
+                        position: absolute;
+                        right: 0px;
+                        &::after{
+                            content: map-get($icons, search );   
+                            color: $white;                        
+                        
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

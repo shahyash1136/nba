@@ -1,0 +1,12 @@
+@import '../_mixin.scss';
+@import '../_variables.scss';
+.slider{
+    width: 100vw;
+    height: 100vh;
+    margin-top: 50px;
+    overflow: hidden;
+    img{
+        width: 100%;
+        height: auto;
+    }
+}
