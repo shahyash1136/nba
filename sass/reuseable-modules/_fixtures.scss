@@ -1,0 +1,158 @@
+@import "../_mixin.scss";
+@import "../_variables.scss";
+
+.fixtures {
+    padding: 60px 0px;
+
+    &__box {
+        width: 376px;
+        margin: auto;
+
+        overflow: hidden;
+    }
+
+    &__date {
+        color: $white;
+    }
+
+    &__status {
+        color: $white;
+    }
+
+    &__boxHead {
+        @extend %flexbox;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0px 5px;
+        margin-bottom: 5px;
+    }
+
+    &__container {
+        @extend %flexbox;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: $white;
+        height: 170px;
+        padding: 10px;
+        @include border-radius(5px);
+    }
+
+    
+
+    .team {
+
+        &__A,
+        &__B {
+            @extend %flexbox;
+            flex-flow: column-reverse;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 25%;
+            width: 25%;
+        }
+
+        &__A {
+            padding-right: 5px;
+
+        }
+
+        &__B {
+
+            padding-left: 5px;
+
+        }
+
+        &__name {
+            text-align: center;
+            font-family: $regular_font-family_primary;
+            font-weight: $medium_font-weight;
+            font-size: 16px;
+            color: $secondary;
+            text-transform: uppercase;
+
+            .fullName {
+                display: block;
+
+                @media screen and (max-width: $media-mobile-max) {
+                    display: none;
+                }
+            }
+
+            .shortName {
+                display: none;
+
+                @media screen and (max-width: $media-mobile-max) {
+                    display: block;
+                }
+            }
+        }
+
+        &__logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto;
+
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+
+        &__vs {
+            @extend %flexbox;
+            align-items: center;
+            justify-content: space-around;
+            flex: 1;
+        }
+
+        &__right,
+        &__left {
+            font-family: $regular_font-family_primary;
+            font-weight: $regular_font-weight;
+            font-size: 30px;
+            line-height: 1;
+        }
+
+        &__center {
+            .vs {
+                &-svg {
+                    width: 25px;
+                    height: 31px;
+                    margin: 0 auto;
+                    position: relative;
+                }
+
+                &-txt {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    @include transform(translate(-50%, -50%));
+                    line-height: 1;
+                    color: $white;
+
+                }
+            }
+
+            .time {
+                line-height: 1;
+                
+                font-size: 14px;
+                text-align: center;
+                font-family: $regular_font-family_primary;
+                font-weight: $regular_font-weight;
+                color: $complementray;
+            }
+
+            .svg-bg {
+                stroke: $complementray;
+                fill: $secondary;
+                stroke-width: 5px;
+            }
+        }
+
+
+
+    }
+
+}

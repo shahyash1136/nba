@@ -4,6 +4,7 @@
 .teamsBox {
     padding: 60px 0px;
     background-color: rgba($white,0.98);
+    overflow: hidden
 }
 
 .club{
@@ -20,6 +21,10 @@
         padding: 15px;
     }
     &__logo{
+        width: 150px;
+        height: 150px;
+        margin: auto;
+        margin-bottom: 15px;
         img{
             width: 100%;
             height: auto;

@@ -34,7 +34,8 @@ gulp.task('serve', function () {
     browserSync.init({
         injectChanges: true,
         watch: true,
-        proxy: "http://127.0.0.1:5500/"
+        /* proxy: "http://127.0.0.1:5500/" */
+        proxy:"http://192.168.100.150:8079/yash.shah/nba-test/"
     });
 
     gulp.watch(['./sass/**/*.scss', './**/*.html'], gulp.series('sass',  done => {
