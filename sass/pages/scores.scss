@@ -1,0 +1,112 @@
+@import "../_mixin.scss";
+@import "../_variables.scss";
+
+.scores {
+    padding: 50px 0px;
+
+    &__head {
+        @extend %flexbox;
+        justify-content: space-between;
+        align-items: center;
+
+        &Left {
+            font-size: 30px;
+            font-family: $regular_font-family_primary;
+            font-weight: $regular_font-weight;
+            color: $white;
+            text-transform: uppercase;
+        }
+
+        &Right {
+            @extend %flexbox;
+            justify-content: space-between;
+            align-items: center;
+
+            .drpDwn {
+                flex: 0 0 150px;
+                width: 150px;
+
+                &__value {
+                    background: $secondary;
+                    border-color: $secondary;
+                    color: $primary;
+                    text-transform: capitalize;
+                    height: 30px;
+                    @include border-radius(10px);
+                    padding: 5px 10px;
+                    padding-right: 40px;
+
+                    span {
+                        font-family: $regular_font-family_primary;
+                        font-weight: $regular_font-weight;
+                        line-height: 1;
+                    }
+                }
+
+                &__list {
+                    ul {
+                        li {
+                            color: rgba($black, .5);
+                            font-size: 14px;
+                            padding: 10px;
+
+                            &:hover {
+                                background-color: $secondary;
+                                color: $white;
+                            }
+                        }
+                    }
+                }
+
+                &:not(:last-child) {
+                    margin-right: 15px;
+                }
+            }
+        }
+    }
+
+    &__container {
+        @extend %flexbox;
+        justify-content: flex-start;
+        align-items: flex-start;
+        flex-wrap: wrap;
+        margin: 0 -5px;
+
+        .fixtures__box {
+            flex: 0 0 33.33%;
+            width: 33.33%;
+            padding: 0px 10px;
+            margin-top: 15px;
+        }
+    }
+
+    &__pagination {
+        @extend %flexbox;
+        align-items: center;
+        justify-content: center;
+        margin-top: 15px;
+
+        a {
+            color: $white;
+            float: left;
+            padding: 8px 16px;
+            text-decoration: none;
+            @include transition(all, .3s, ease);
+            border:1px solid $secondary;
+            &:not(:last-child){
+                margin-right: 5px;
+            }
+            &.active {
+                background-color: $complementray;
+                border-color: $complementray;
+                color: $white;
+            }
+
+            &:hover:not(.active) {
+                background-color: $complementray;
+                border-color: $complementray;
+                color: $white;
+            }
+        }
+    }
+}
