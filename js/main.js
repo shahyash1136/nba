@@ -7,7 +7,11 @@ nba.getData = function (test, callBack) {
         url: nba.path + test,
         success: function (data) {
             callBack(data);
+        },
+        complete: function () {
+            $('.loader-wrapper').hide();
         }
+
     });
 }
 
@@ -16,10 +20,9 @@ $(document).ready(function () {
     nba.getData('teams/', function (data) {
         nba.teamData(data);
     });
-    nba.getData('games/', function (data) {
+    nba.getData('games/?per_page=100&', function (data) {
         nba.gameData(data);
     });
-    
     nba.bindEvent();
 });
 
@@ -49,13 +52,14 @@ nba.gameData = function (data) {
         },
     });
 
-    for (let i = 1; i <= data.meta.total_pages; i++) {
-        console.log(i);
-        
-    }
+    
 
 
-
+    nba.paginationDom.Init(document.querySelector('.scores__pagination'), {
+        size: data.meta.total_pages, // pages  size
+        page: data.meta.current_page, // selected page
+        step: data.meta.next_page // pages before and after current
+    })
 }
 
 
@@ -81,6 +85,7 @@ nba.teamData = function (data) {
         $('body').find('.drpDwn.clubs .drpDwn__list ul').append(listDrpDwnClub);
 
     }
+
 }
 
 nba.bindEvent = function () {
@@ -98,14 +103,149 @@ nba.bindEvent = function () {
     })
 
 
-    $('body').on('click','.drpDwn li', function () {
+    $('body').on('click', '.drpDwn li', function () {
         $(this).parent().parent().siblings().children().first().text($(this).text());
-        
+
     });
 
 
 }
 
-nba.gamesPage = function(data){
 
+nba.pagination = function(data){
+    if(data.meta.current_page){
+        //code....
+        $('body').find('.paginationNumber').on('click',function(){
+            console.log('Hi');
+        })
+    }
+    
+
+
+    for (let i = 1; i <= data.meta.total_pages; i++) {
+        console.log(i);
+        
+    }
+}
+
+nba.paginationDom = {
+    code: '',
+
+    formatNumber: function (number, classes) {
+        return `<li class="paginationItem ${classes}${number===nba.paginationDom.page ? ' active' : ''}" data-num="${number}">${number}</li>`;
+    },
+
+    formatEllipsis: function () {
+        return '<li class="paginationItem paginationEllipsis">&hellip;</li>';
+    },
+
+    formatPrevious: function () {
+        return '<li class="paginationItem paginationPrevious">Previous</li>';
+    },
+
+    formatNext: function () {
+        return '<li class="paginationItem paginationNext">Next</li>';
+    },
+
+    add: function (start, end) {
+        for (let i = start; i < end; i++) {
+            if (i === 1) {               
+                nba.paginationDom.code += this.formatNumber(i, 'paginationNumber paginationFirst');
+            } else if (i === nba.paginationDom.size) {
+                
+                nba.paginationDom.code += this.formatNumber(i, 'paginationNumber paginationLast');
+            } else {          
+                nba.paginationDom.code += this.formatNumber(i, 'paginationNumber');
+            }
+        }
+    },
+
+    last: function () {
+        nba.paginationDom.code += this.formatEllipsis();
+        nba.paginationDom.code += this.formatNumber(nba.paginationDom.size, 'paginationNumber paginationLast');
+    },
+
+    first: function () {
+        nba.paginationDom.code += this.formatNumber(1, 'paginationNumber paginationFirst');
+        nba.paginationDom.code += this.formatEllipsis();
+    },
+
+    onClick: function (e) {
+        if (nba.paginationDom.page === +e.target.dataset.num) {
+            return;
+        }
+        
+        nba.paginationDom.page = +e.target.dataset.num;
+        nba.paginationDom.Start();
+    },
+
+    onPrev: function () {
+        if (nba.paginationDom.page === 1) {
+            return;
+        }
+        nba.paginationDom.page--;
+        nba.paginationDom.Start();
+    },
+
+    onNext: function () {
+        if (nba.paginationDom.page === nba.paginationDom.size) {
+            return;
+        }
+        nba.paginationDom.page++;
+        nba.paginationDom.Start();
+    },
+    // --------------------
+    // Script
+    // --------------------
+
+    // binding pages
+    Bind: function () {
+        const a = nba.paginationDom.e.getElementsByClassName('paginationNumber');
+        for (let i = 0; i < a.length; i++) {
+            a[i].addEventListener('click', nba.paginationDom.onClick, false);
+        }
+    },
+
+    // find pagination type
+    Start: function () {
+        if (nba.paginationDom.size < nba.paginationDom.step * 2 + 6) {
+
+            nba.paginationDom.add(1, nba.paginationDom.size + 1);
+        } else if (nba.paginationDom.page <= nba.paginationDom.step * 2 + 2) {
+
+            nba.paginationDom.add(1, nba.paginationDom.step * 2 + 4);
+            nba.paginationDom.last();
+        } else if (nba.paginationDom.page >= nba.paginationDom.size - nba.paginationDom.step * 2 - 1) {
+
+            nba.paginationDom.first();
+            nba.paginationDom.add(nba.paginationDom.size - nba.paginationDom.step * 2 - 2, nba.paginationDom.size + 1);
+        } else {
+
+            nba.paginationDom.first();
+            nba.paginationDom.add(nba.paginationDom.page - nba.paginationDom.step, nba.paginationDom.page + nba.paginationDom.step + 1);
+            nba.paginationDom.last();
+        }
+
+        const html = `<ul class="paginationList">${this.formatPrevious()}${nba.paginationDom.code}${this.formatNext()}</ul>`;
+        nba.paginationDom.e.innerHTML = html;
+
+        nba.paginationDom.code = '';
+        nba.paginationDom.Bind();
+        nba.paginationDom.Buttons();
+    },
+
+    Buttons: function (e) {
+        nba.paginationDom.e.getElementsByClassName('paginationPrevious')[0].addEventListener('click', nba.paginationDom.onPrev, false);
+        nba.paginationDom.e.getElementsByClassName('paginationNext')[0].addEventListener('click', nba.paginationDom.onNext, false);
+    },
+
+    // init
+    Init: function (e, data) {
+        data = data || {};
+        nba.paginationDom.size = data.size;
+        nba.paginationDom.page = data.page || 1;
+        nba.paginationDom.step = data.step || 3;
+        nba.paginationDom.e = e;
+        nba.paginationDom.Start();
+    }
 }

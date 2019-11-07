@@ -81,21 +81,26 @@
     }
 
     &__pagination {
-        @extend %flexbox;
-        align-items: center;
-        justify-content: center;
-        margin-top: 15px;
 
-        a {
+        ul {
+            @extend %flexbox;
+            align-items: center;
+            justify-content: center;
+            margin-top: 15px;
+        }
+
+        li {
             color: $white;
             float: left;
             padding: 8px 16px;
             text-decoration: none;
             @include transition(all, .3s, ease);
-            border:1px solid $secondary;
-            &:not(:last-child){
+            border: 1px solid $secondary;
+
+            &:not(:last-child) {
                 margin-right: 5px;
             }
+
             &.active {
                 background-color: $complementray;
                 border-color: $complementray;

@@ -1184,7 +1184,6 @@ body {
   overflow: hidden;
   z-index: 9999;
   @include flexbox;
-  display: none;
 
   .loader {
     position: absolute;
