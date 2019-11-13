@@ -1,0 +1,141 @@
+.playerList__container, .playerList__headRight, .playerList__head {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.player {
+  flex: 0 0 25%;
+  width: 25%;
+  padding: 0px 10px;
+  margin: 20px 0px 0px;
+}
+.player__container {
+  background-color: #f6f6f6;
+  overflow: hidden;
+  padding: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+}
+.player__head {
+  position: relative;
+  z-index: 1;
+}
+.player__img {
+  width: calc(100% - 30%);
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+.player__img img {
+  width: 100%;
+  height: auto;
+}
+.player__team {
+  position: absolute;
+  width: calc(100% - 75%);
+  left: 0;
+  top: 0;
+}
+.player__team img {
+  width: 100%;
+  height: auto;
+}
+.player__pos {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  font-size: 45px;
+  line-height: 1;
+  opacity: 0.2;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  color: #15418c;
+}
+.player__body {
+  background-color: #ffffff;
+  margin: -4px -10px -10px;
+  padding: 10px;
+}
+.player__firstName {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #15418c;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.player__lastName {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ca042a;
+  line-height: 1;
+}
+.playerList {
+  padding: 50px 0px;
+}
+.playerList__head {
+  justify-content: space-between;
+  align-items: center;
+}
+.playerList__headLeft {
+  font-size: 30px;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.playerList__headRight {
+  justify-content: space-between;
+  align-items: center;
+}
+.playerList__headRight .drpDwn {
+  flex: 0 0 150px;
+  width: 150px;
+}
+.playerList__headRight .drpDwn__value {
+  background: #15418c;
+  border-color: #15418c;
+  color: #fff;
+  text-transform: capitalize;
+  height: 30px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  padding-right: 40px;
+}
+.playerList__headRight .drpDwn__value span {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+.playerList__headRight .drpDwn__list ul li {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  padding: 10px;
+}
+.playerList__headRight .drpDwn__list ul li:hover {
+  background-color: #15418c;
+  color: #ffffff;
+}
+.playerList__headRight .drpDwn:not(:last-child) {
+  margin-right: 15px;
+}
+.playerList__container {
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  argin: 0px -10px;
+}
+/*# sourceMappingURL=players.css.map */

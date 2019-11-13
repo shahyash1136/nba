@@ -1,0 +1,145 @@
+@import "../_mixin.scss";
+@import "../_variables.scss";
+
+.player{
+    flex: 0 0 25%;
+    width: 25%;
+    padding: 0px 10px;
+    margin: 20px 0px 0px;
+    
+    &__container{
+        background-color: #f6f6f6;
+        overflow: hidden;
+        padding: 10px;
+        @include border-radius(10px);
+    }
+    &__head {
+        position: relative;
+        z-index: 1;
+    }
+    &__img {
+        width: calc(100% - 30%);
+        margin: auto;
+        position: relative;
+        z-index: 1;
+        img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__team {
+        position: absolute;
+        width: calc(100% - 75%);
+        left: 0;
+        top: 0;
+        & img{
+            width: 100%;
+            height: auto;
+        }
+    }
+    &__pos {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+        font-size: 45px;
+        line-height: 1;
+        opacity: .2;
+        font-family: $regular_font-family_primary;
+        font-weight: $regular_font-weight;
+        color: $secondary;
+    }
+    &__body {
+        background-color: $white;
+        margin: -4px -10px -10px;
+        padding: 10px;
+    }
+    &__firstName{
+        font-family: $regular_font-family_primary;
+        font-weight: $regular_font-weight;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: $secondary;
+        line-height: 1;
+        margin-bottom: 5px;
+    }
+    &__lastName{
+        font-family: $regular_font-family_primary;
+        font-weight: $regular_font-weight;
+        font-size: 16px;
+        text-transform: capitalize;
+        color: $complementray;
+        line-height: 1;
+    }
+    &List {
+        padding: 50px 0px;
+    
+        &__head {
+            @extend %flexbox;
+            justify-content: space-between;
+            align-items: center;
+    
+            &Left {
+                font-size: 30px;
+                font-family: $regular_font-family_primary;
+                font-weight: $regular_font-weight;
+                color: $white;
+                text-transform: uppercase;
+            }
+    
+            &Right {
+                @extend %flexbox;
+                justify-content: space-between;
+                align-items: center;
+    
+                .drpDwn {
+                    flex: 0 0 150px;
+                    width: 150px;
+    
+                    &__value {
+                        background: $secondary;
+                        border-color: $secondary;
+                        color: $primary;
+                        text-transform: capitalize;
+                        height: 30px;
+                        @include border-radius(10px);
+                        padding: 5px 10px;
+                        padding-right: 40px;
+    
+                        span {
+                            font-family: $regular_font-family_primary;
+                            font-weight: $regular_font-weight;
+                            line-height: 1;
+                        }
+                    }
+    
+                    &__list {
+                        ul {
+                            li {
+                                color: rgba($black, .5);
+                                font-size: 14px;
+                                padding: 10px;
+    
+                                &:hover {
+                                    background-color: $secondary;
+                                    color: $white;
+                                }
+                            }
+                        }
+                    }
+    
+                    &:not(:last-child) {
+                        margin-right: 15px;
+                    }
+                }
+            }
+        }
+    
+        &__container{
+            @extend %flexbox;
+            justify-content: flex-start;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            argin: 0px -10px;
+        }
+    }
+}

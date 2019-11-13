@@ -1,0 +1,104 @@
+.scores__pagination ul, .scores__container, .scores__headRight, .scores__head {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.scores {
+  padding: 50px 0px;
+}
+.scores__head {
+  justify-content: space-between;
+  align-items: center;
+}
+.scores__headLeft {
+  font-size: 30px;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.scores__headRight {
+  justify-content: space-between;
+  align-items: center;
+}
+.scores__headRight .drpDwn {
+  flex: 0 0 150px;
+  width: 150px;
+}
+.scores__headRight .drpDwn__value {
+  background: #15418c;
+  border-color: #15418c;
+  color: #fff;
+  text-transform: capitalize;
+  height: 30px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  padding-right: 40px;
+}
+.scores__headRight .drpDwn__value span {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+.scores__headRight .drpDwn__list ul li {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  padding: 10px;
+}
+.scores__headRight .drpDwn__list ul li:hover {
+  background-color: #15418c;
+  color: #ffffff;
+}
+.scores__headRight .drpDwn:not(:last-child) {
+  margin-right: 15px;
+}
+.scores__container {
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+}
+.scores__container .fixtures__box {
+  flex: 0 0 33.33%;
+  width: 33.33%;
+  padding: 0px 10px;
+  margin-top: 15px;
+}
+.scores__pagination ul {
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+.scores__pagination li {
+  color: #ffffff;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border: 1px solid #15418c;
+}
+.scores__pagination li:not(:last-child) {
+  margin-right: 5px;
+}
+.scores__pagination li.active {
+  background-color: #ca042a;
+  border-color: #ca042a;
+  color: #ffffff;
+}
+.scores__pagination li:hover:not(.active) {
+  background-color: #ca042a;
+  border-color: #ca042a;
+  color: #ffffff;
+}
+/*# sourceMappingURL=scores.css.map */

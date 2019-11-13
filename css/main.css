@@ -3753,7 +3753,7 @@ button.swiper-pagination-bullet {
 
 /* @import '_custom-icon.scss'; */
 /* @import '_maps.scss'; */
-.fixtures .team__vs, .fixtures .team__A, .fixtures .team__B, .fixtures__container, .fixtures__boxHead, .tab__list li a, .tab__list li, .tab__list, .clubBox, .header .menu ul li a, .header .menu ul li, .header .menu ul, .header .menu, .header__right, .header, .flexBox {
+.playerList__container, .playerList__headRight, .playerList__head, .scores__pagination ul, .scores__container, .scores__headRight, .scores__head, .fixtures__container, .fixtures__boxHead, .fixtures__box .team__vs, .fixtures__box .team__A, .fixtures__box .team__B, .tab__list li a, .tab__list li, .tab__list, .clubBox, .header .menu ul li a, .header .menu ul li, .header .menu ul, .header .menu, .header__right, .header, .flexBox {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -4892,7 +4892,6 @@ body.ar {
   display: -moz-flex;
   display: -ms-flexbox;
   display: flex;
-  display: none;
 }
 .loader-wrap .loader {
   position: absolute;
@@ -5293,7 +5292,7 @@ _:-ms-fullscreen,
   align-items: stretch;
 }
 
-.fixtures .team__vs, .fixtures .team__A, .fixtures .team__B, .fixtures__container, .fixtures__boxHead, .tab__list li a, .tab__list li, .tab__list, .clubBox, .header .menu ul li a, .header .menu ul li, .header .menu ul, .header .menu, .header__right, .header, .flexBox {
+.playerList__container, .playerList__headRight, .playerList__head, .scores__pagination ul, .scores__container, .scores__headRight, .scores__head, .fixtures__container, .fixtures__boxHead, .fixtures__box .team__vs, .fixtures__box .team__A, .fixtures__box .team__B, .tab__list li a, .tab__list li, .tab__list, .clubBox, .header .menu ul li a, .header .menu ul li, .header .menu ul, .header .menu, .header__right, .header, .flexBox {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -5393,7 +5392,7 @@ _:-ms-fullscreen,
   color: #ffffff;
 }
 
-.fixtures .team__vs, .fixtures .team__A, .fixtures .team__B, .fixtures__container, .fixtures__boxHead, .tab__list li a, .tab__list li, .tab__list, .clubBox, .flexBox, .header, .header__right, .header .menu, .header .menu ul, .header .menu ul li, .header .menu ul li a {
+.playerList__container, .playerList__headRight, .playerList__head, .scores__pagination ul, .scores__container, .scores__headRight, .scores__head, .fixtures__container, .fixtures__boxHead, .fixtures__box .team__vs, .fixtures__box .team__A, .fixtures__box .team__B, .tab__list li a, .tab__list li, .tab__list, .clubBox, .flexBox, .header, .header__right, .header .menu, .header .menu ul, .header .menu ul li, .header .menu ul li a {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -5401,7 +5400,7 @@ _:-ms-fullscreen,
   display: flex;
 }
 
-.fixtures .team__vs, .fixtures .team__A, .fixtures .team__B, .fixtures__container, .fixtures__boxHead, .tab__list li a, .tab__list li, .tab__list, .clubBox, .flexBox, .header, .header__right, .header .menu, .header .menu ul, .header .menu ul li, .header .menu ul li a {
+.playerList__container, .playerList__headRight, .playerList__head, .scores__pagination ul, .scores__container, .scores__headRight, .scores__head, .fixtures__container, .fixtures__boxHead, .fixtures__box .team__vs, .fixtures__box .team__A, .fixtures__box .team__B, .tab__list li a, .tab__list li, .tab__list, .clubBox, .flexBox, .header, .header__right, .header .menu, .header .menu ul, .header .menu ul li, .header .menu ul li a {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -5420,7 +5419,7 @@ _:-ms-fullscreen,
   height: auto;
 }
 
-.fixtures .team__vs, .fixtures .team__A, .fixtures .team__B, .fixtures__container, .fixtures__boxHead, .tab__list li a, .tab__list li, .tab__list, .clubBox, .flexBox, .header, .header__right, .header .menu, .header .menu ul, .header .menu ul li, .header .menu ul li a {
+.playerList__container, .playerList__headRight, .playerList__head, .scores__pagination ul, .scores__container, .scores__headRight, .scores__head, .fixtures__container, .fixtures__boxHead, .fixtures__box .team__vs, .fixtures__box .team__A, .fixtures__box .team__B, .tab__list li a, .tab__list li, .tab__list, .clubBox, .flexBox, .header, .header__right, .header .menu, .header .menu ul, .header .menu ul li, .header .menu ul li a {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -5442,6 +5441,7 @@ _:-ms-fullscreen,
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: wrap;
+  min-height: 300px;
 }
 .club__container {
   padding: 15px;
@@ -5500,7 +5500,7 @@ _:-ms-fullscreen,
   font-family: "Roboto", sans-serif;
   font-weight: 500;
 }
-.fixtures .team__vs, .fixtures .team__A, .fixtures .team__B, .fixtures__container, .fixtures__boxHead, .flexBox, .header, .header__right, .header .menu, .header .menu ul, .header .menu ul li, .header .menu ul li a, .clubBox, .tab__list, .tab__list li, .tab__list li a {
+.playerList__container, .playerList__headRight, .playerList__head, .scores__pagination ul, .scores__container, .scores__headRight, .scores__head, .fixtures__container, .fixtures__boxHead, .fixtures__box .team__vs, .fixtures__box .team__A, .fixtures__box .team__B, .flexBox, .header, .header__right, .header .menu, .header .menu ul, .header .menu ul li, .header .menu ul li a, .clubBox, .tab__list, .tab__list li, .tab__list li a {
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-flex;
@@ -5513,8 +5513,95 @@ _:-ms-fullscreen,
 }
 .fixtures__box {
   width: 376px;
-  margin: auto;
   overflow: hidden;
+}
+.fixtures__box .team__A, .fixtures__box .team__B {
+  flex-flow: column-reverse;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 25%;
+  width: 25%;
+}
+.fixtures__box .team__A {
+  padding-right: 5px;
+}
+.fixtures__box .team__B {
+  padding-left: 5px;
+}
+.fixtures__box .team__name {
+  text-align: center;
+  font-family: "Anton", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #15418c;
+  text-transform: uppercase;
+}
+.fixtures__box .team__name .fullName {
+  display: block;
+}
+@media screen and (max-width: 767px) {
+  .fixtures__box .team__name .fullName {
+    display: none;
+  }
+}
+.fixtures__box .team__name .shortName {
+  display: none;
+}
+@media screen and (max-width: 767px) {
+  .fixtures__box .team__name .shortName {
+    display: block;
+  }
+}
+.fixtures__box .team__logo {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto;
+}
+.fixtures__box .team__logo img {
+  width: 100%;
+  height: auto;
+}
+.fixtures__box .team__vs {
+  align-items: center;
+  justify-content: space-around;
+  flex: 1;
+}
+.fixtures__box .team__right, .fixtures__box .team__left {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 1;
+}
+.fixtures__box .team__center .vs-svg {
+  width: 25px;
+  height: 31px;
+  margin: 0 auto;
+  position: relative;
+}
+.fixtures__box .team__center .vs-txt {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  line-height: 1;
+  color: #ffffff;
+}
+.fixtures__box .team__center .time {
+  line-height: 1;
+  font-size: 14px;
+  text-align: center;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  color: #ca042a;
+}
+.fixtures__box .team__center .svg-bg {
+  stroke: #ca042a;
+  fill: #15418c;
+  stroke-width: 5px;
 }
 .fixtures__date {
   color: #ffffff;
@@ -5541,92 +5628,355 @@ _:-ms-fullscreen,
   -o-border-radius: 5px;
   border-radius: 5px;
 }
-.fixtures .team__A, .fixtures .team__B {
-  flex-flow: column-reverse;
-  align-items: center;
-  justify-content: center;
-  flex: 0 0 25%;
-  width: 25%;
+
+.playerList__container, .playerList__headRight, .playerList__head, .scores__pagination ul, .scores__container, .scores__headRight, .scores__head, .flexBox, .header, .header__right, .header .menu, .header .menu ul, .header .menu ul li, .header .menu ul li a, .clubBox, .tab__list, .tab__list li, .tab__list li a, .fixtures__box .team__A, .fixtures__box .team__B, .fixtures__box .team__vs, .fixtures__boxHead, .fixtures__container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
 }
-.fixtures .team__A {
-  padding-right: 5px;
-}
-.fixtures .team__B {
-  padding-left: 5px;
-}
-.fixtures .team__name {
-  text-align: center;
-  font-family: "Anton", sans-serif;
-  font-weight: 500;
-  font-size: 16px;
-  color: #15418c;
-  text-transform: uppercase;
-}
-.fixtures .team__name .fullName {
-  display: block;
-}
-@media screen and (max-width: 767px) {
-  .fixtures .team__name .fullName {
-    display: none;
-  }
-}
-.fixtures .team__name .shortName {
-  display: none;
-}
-@media screen and (max-width: 767px) {
-  .fixtures .team__name .shortName {
-    display: block;
-  }
-}
-.fixtures .team__logo {
-  width: 80px;
-  height: 80px;
-  margin: 0 auto;
-}
-.fixtures .team__logo img {
-  width: 100%;
-  height: auto;
-}
-.fixtures .team__vs {
-  align-items: center;
-  justify-content: space-around;
-  flex: 1;
-}
-.fixtures .team__right, .fixtures .team__left {
-  font-family: "Anton", sans-serif;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 1;
-}
-.fixtures .team__center .vs-svg {
-  width: 25px;
-  height: 31px;
-  margin: 0 auto;
-  position: relative;
-}
-.fixtures .team__center .vs-txt {
+
+.loader-wrapper {
+  width: 200px;
+  height: 150px;
   position: absolute;
   top: 50%;
   left: 50%;
+  overflow: hidden;
   -webkit-transform: translate(-50%, -50%);
   -moz-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
   -o-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  line-height: 1;
-  color: #ffffff;
 }
-.fixtures .team__center .time {
-  line-height: 1;
-  font-size: 14px;
-  text-align: center;
+
+.floor {
+  position: absolute;
+  width: 314.159265359px;
+  bottom: 0px;
+  height: 4px;
+  background: #505050;
+  animation-name: floor_move;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+}
+
+.ball {
+  width: 50%;
+  height: 100px;
+  border-radius: 50%;
+  left: 0;
+  background: #ffae58;
+  position: absolute;
+  border: 4px solid #ac4b07;
+  bottom: 4px;
+  animation-name: ball;
+  animation-iteration-count: infinite;
+  animation-duration: 4s;
+  animation-delay: 0s;
+  animation-timing-function: linear;
+  overflow: hidden;
+}
+
+.ball-line {
+  position: absolute;
+  width: calc(100% + 2px);
+  height: 4px;
+  background: #ac4b07;
+}
+
+.ball-line:nth-child(1) {
+  top: 50%;
+  margin-top: -2px;
+}
+
+.ball-line:nth-child(2) {
+  width: 100%;
+  height: 30%;
+  transform: rotate(180deg);
+  border-radius: 50%;
+  background: transparent;
+  border: 4px solid #ac4b07;
+  top: -10px;
+}
+
+.ball-line:nth-child(3) {
+  width: 100%;
+  height: 30%;
+  transform: rotate(180deg);
+  border-radius: 50%;
+  background: transparent;
+  border: 4px solid #ac4b07;
+  bottom: -10px;
+}
+
+.ball-line:nth-child(4) {
+  top: 50%;
+  margin-top: -2px;
+  transform: rotate(90deg);
+}
+
+@keyframes ball {
+  from, to {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes floor_move {
+  from, to {
+    left: 50px;
+  }
+  50% {
+    left: -264.159265359px;
+  }
+}
+.playerList__container, .playerList__headRight, .playerList__head, .scores__pagination ul, .scores__container, .scores__headRight, .scores__head, .flexBox, .header, .header__right, .header .menu, .header .menu ul, .header .menu ul li, .header .menu ul li a, .clubBox, .tab__list, .tab__list li, .tab__list li a, .fixtures__box .team__A, .fixtures__box .team__B, .fixtures__box .team__vs, .fixtures__boxHead, .fixtures__container {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.scores {
+  padding: 50px 0px;
+}
+.scores__head {
+  justify-content: space-between;
+  align-items: center;
+}
+.scores__headLeft {
+  font-size: 30px;
   font-family: "Anton", sans-serif;
   font-weight: 400;
-  color: #ca042a;
+  color: #ffffff;
+  text-transform: uppercase;
 }
-.fixtures .team__center .svg-bg {
-  stroke: #ca042a;
-  fill: #15418c;
-  stroke-width: 5px;
+.scores__headRight {
+  justify-content: space-between;
+  align-items: center;
+}
+.scores__headRight .drpDwn {
+  flex: 0 0 150px;
+  width: 150px;
+}
+.scores__headRight .drpDwn__value {
+  background: #15418c;
+  border-color: #15418c;
+  color: #fff;
+  text-transform: capitalize;
+  height: 30px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  padding-right: 40px;
+}
+.scores__headRight .drpDwn__value span {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+.scores__headRight .drpDwn__list ul li {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  padding: 10px;
+}
+.scores__headRight .drpDwn__list ul li:hover {
+  background-color: #15418c;
+  color: #ffffff;
+}
+.scores__headRight .drpDwn:not(:last-child) {
+  margin-right: 15px;
+}
+.scores__container {
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin: 0 -5px;
+}
+.scores__container .fixtures__box {
+  flex: 0 0 33.33%;
+  width: 33.33%;
+  padding: 0px 10px;
+  margin-top: 15px;
+}
+.scores__pagination ul {
+  align-items: center;
+  justify-content: center;
+  margin-top: 15px;
+}
+.scores__pagination li {
+  color: #ffffff;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  border: 1px solid #15418c;
+}
+.scores__pagination li:not(:last-child) {
+  margin-right: 5px;
+}
+.scores__pagination li.active {
+  background-color: #ca042a;
+  border-color: #ca042a;
+  color: #ffffff;
+}
+.scores__pagination li:hover:not(.active) {
+  background-color: #ca042a;
+  border-color: #ca042a;
+  color: #ffffff;
+}
+
+.playerList__container, .playerList__headRight, .playerList__head, .flexBox, .header, .header__right, .header .menu, .header .menu ul, .header .menu ul li, .header .menu ul li a, .clubBox, .tab__list, .tab__list li, .tab__list li a, .fixtures__box .team__A, .fixtures__box .team__B, .fixtures__box .team__vs, .fixtures__boxHead, .fixtures__container, .scores__head, .scores__headRight, .scores__container, .scores__pagination ul {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.player {
+  flex: 0 0 25%;
+  width: 25%;
+  padding: 0px 10px;
+  margin: 20px 0px 0px;
+}
+.player__container {
+  background-color: #f6f6f6;
+  overflow: hidden;
+  padding: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+}
+.player__head {
+  position: relative;
+  z-index: 1;
+}
+.player__img {
+  width: calc(100% - 30%);
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+.player__img img {
+  width: 100%;
+  height: auto;
+}
+.player__team {
+  position: absolute;
+  width: calc(100% - 75%);
+  left: 0;
+  top: 0;
+}
+.player__team img {
+  width: 100%;
+  height: auto;
+}
+.player__pos {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  font-size: 45px;
+  line-height: 1;
+  opacity: 0.2;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  color: #15418c;
+}
+.player__body {
+  background-color: #ffffff;
+  margin: -4px -10px -10px;
+  padding: 10px;
+}
+.player__firstName {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #15418c;
+  line-height: 1;
+  margin-bottom: 5px;
+}
+.player__lastName {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ca042a;
+  line-height: 1;
+}
+.playerList {
+  padding: 50px 0px;
+}
+.playerList__head {
+  justify-content: space-between;
+  align-items: center;
+}
+.playerList__headLeft {
+  font-size: 30px;
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  color: #ffffff;
+  text-transform: uppercase;
+}
+.playerList__headRight {
+  justify-content: space-between;
+  align-items: center;
+}
+.playerList__headRight .drpDwn {
+  flex: 0 0 150px;
+  width: 150px;
+}
+.playerList__headRight .drpDwn__value {
+  background: #15418c;
+  border-color: #15418c;
+  color: #fff;
+  text-transform: capitalize;
+  height: 30px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border-radius: 10px;
+  padding: 5px 10px;
+  padding-right: 40px;
+}
+.playerList__headRight .drpDwn__value span {
+  font-family: "Anton", sans-serif;
+  font-weight: 400;
+  line-height: 1;
+}
+.playerList__headRight .drpDwn__list ul li {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 14px;
+  padding: 10px;
+}
+.playerList__headRight .drpDwn__list ul li:hover {
+  background-color: #15418c;
+  color: #ffffff;
+}
+.playerList__headRight .drpDwn:not(:last-child) {
+  margin-right: 15px;
+}
+.playerList__container {
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  argin: 0px -10px;
 }
 /*# sourceMappingURL=main.css.map */

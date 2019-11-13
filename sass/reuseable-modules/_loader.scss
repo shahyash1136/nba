@@ -14,9 +14,9 @@ $floor_color: #505050;
     height: $height;
     position: absolute;
     top: 50%;
-    left: 50%;
-    margin: -$height/2 0px 0px -$width/2;
+    left: 50%;  
     overflow: hidden;
+    @include transform(translate(-50%,-50%));
 }
 
 .floor {
